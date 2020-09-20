@@ -10,15 +10,15 @@ y = wine["quality"]
 x = wine.drop("quality", axis=1)
 # 不均衡データであるため、yのラベルを付け直す
 # 具体的にはワインの品質を3段階に分類する
-newlist = []
+new_list = []
 for v in list(y):
     if v <= 4:
-        newlist += [0]
+        new_list += [0]
     elif v <= 7:
-        newlist += [1]
+        new_list += [1]
     else:
-        newlist += [2]
-y = newlist
+        new_list += [2]
+y = new_list
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
 
