@@ -20,7 +20,7 @@ clf.fit(learn_data, learn_label)
 
 # テストデータによる予測
 test_data = [[0, 0], [1, 0], [0, 1], [1, 1]]
-test_label = clf.predict(test_data) 
+test_label = clf.predict(test_data)
 
 # 予測結果の評価
 print(test_data, "の予測結果:", test_label)
