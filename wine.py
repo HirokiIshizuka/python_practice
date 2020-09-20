@@ -8,6 +8,16 @@ wine = pd.read_csv("winequality-white.csv", sep=";", encoding="utf-8")
 
 y = wine["quality"]
 x = wine.drop("quality", axis=1)
+# 不均衡データであるため、yのラベルを付け直す
+newlist = []
+for v in list(y):
+    if v <= 4:
+        newlist += [0]
+    elif v <= 7:
+        newlist += [1]
+    else:
+        newlist += [2]
+y = newlist
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
 
