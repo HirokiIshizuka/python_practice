@@ -9,6 +9,7 @@ wine = pd.read_csv("winequality-white.csv", sep=";", encoding="utf-8")
 y = wine["quality"]
 x = wine.drop("quality", axis=1)
 # 不均衡データであるため、yのラベルを付け直す
+# 具体的にはワインの品質を3段階に分類する
 newlist = []
 for v in list(y):
     if v <= 4:
